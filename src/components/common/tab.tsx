@@ -34,7 +34,7 @@ export default function Tab({ tabs, activeTab, onTabChange }: Props) {
         </ul>
       </div>
       {tabs.map((tab) => (
-        <div key={tab.id} className={activeTab === tab.id ? "block" : "hidden"}>
+        <div key={tab.id} className={`pt-4 ${activeTab === tab.id ? "block" : "hidden"}`}>
           {tab.content}
         </div>
       ))}

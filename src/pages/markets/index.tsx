@@ -61,9 +61,9 @@ export default function Markets() {
   }
 
   return (
-    <>
+    <div className="max-w-[800px] mx-auto">
       <h1 className="text-4xl font-bold">Markets</h1>
       <Tab tabs={tabs} activeTab={activeTab} onTabChange={onTabChange} />
-    </>
+    </div>
   );
 }

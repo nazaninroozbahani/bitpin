@@ -5,9 +5,16 @@ import { AxiosError } from "axios";
 export interface MarketItem {
   id: number;
   title: string;
+  currency1: {
+    image: string;
+  };
   currency2: {
-    code: "IRT" | "USDT"
-  }
+    code: "IRT" | "USDT";
+  };
+  price_info: {
+    price: string;
+    change: number;
+  };
 }
 
 interface IData {
