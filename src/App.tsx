@@ -1,8 +1,9 @@
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import MarketsHome from "./pages/markets-home";
 import { BrowserRouter, Navigate, Route, Routes } from "react-router";
+import Layout from "./components/layout";
 import Market from "./pages/market";
 import MArkets from "./pages/markets";
+import MarketsHome from "./pages/markets-home";
 
 function App() {
   const queryClient = new QueryClient({
@@ -15,7 +16,7 @@ function App() {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <div className="p-8 min-h-screen">
+      <Layout>
         <BrowserRouter>
           <Routes>
             <Route index element={<Navigate to="/markets" replace />} />
@@ -25,7 +26,7 @@ function App() {
             </Route>
           </Routes>
         </BrowserRouter>
-      </div>
+      </Layout>
     </QueryClientProvider>
   );
 }
