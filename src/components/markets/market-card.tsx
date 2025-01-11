@@ -1,4 +1,5 @@
 import { MarketItem } from "@/hooks/useFetchMarkets";
+import { Link } from "react-router";
 
 interface Props {
   market: MarketItem;
@@ -6,9 +7,10 @@ interface Props {
 
 export default function MarketCard({ market }: Props) {
   return (
-    <div
+    <Link
+      to={`/markets/${market.id}`}
       className="rounded-md border border-gray-700 shadow-sm p-4 grid grid-cols-12
-     items-center cursor-pointer hover:shadow-sm hover:shadow-gray-500 duration-300"
+     items-center cursor-pointer hover:shadow-sm hover:shadow-gray-500 duration-150"
     >
       <img
         alt={market.title}
@@ -30,6 +32,6 @@ export default function MarketCard({ market }: Props) {
         {market.price_info.change > 0 && "+"}
         {market.price_info.change}%
       </span>
-    </div>
+    </Link>
   );
 }
