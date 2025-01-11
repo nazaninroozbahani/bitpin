@@ -1,17 +1,17 @@
-import { useState } from "react";
+import { MarketItem } from "@/hooks/useFetchMarkets";
 import Pagination from "../common/pagination";
 import MarketCard from "./market-card";
-import { MarketItem } from "@/hooks/useFetchMarkets";
+import { Dispatch, SetStateAction } from "react";
 
 const PAGE_SIZE = 10;
 
-interface Props{
-    list: MarketItem[]
+interface Props {
+  list: MarketItem[];
+  currentPage: number;
+  setCurrentPage: Dispatch<SetStateAction<number>>;
 }
 
-export default function MarketList({ list }: Props) {
-  const [currentPage, setCurrentPage] = useState(1);
-
+export default function MarketList({ list, currentPage, setCurrentPage }: Props) {
   const filterList = () => {
     return list.filter(
       (_, index) =>
