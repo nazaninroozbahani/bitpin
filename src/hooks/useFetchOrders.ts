@@ -22,5 +22,6 @@ export default function useFetchOrders<
       const response = await getOrders(id, type);
       return response.data;
     },
+    refetchInterval: 3000
   });
 }

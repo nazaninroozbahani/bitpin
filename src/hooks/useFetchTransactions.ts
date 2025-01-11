@@ -19,5 +19,6 @@ export default function useFetchTransactions<
       const response = await getTransactions(id);
       return response.data;
     },
+    refetchInterval: 3000,
   });
 }
